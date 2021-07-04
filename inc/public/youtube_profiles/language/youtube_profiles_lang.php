@@ -1,0 +1,19 @@
+<?php
+$lang["Youtube profiles"] = "Youtube profiles";
+$lang["Youtube profile"] = "Youtube profile";
+$lang["Success"] = "Success";
+$lang["No profile to add"] = "No profile to add";
+$lang["Please select a profile to add"] = "Please select a profile to add";
+$lang["Add Youtube channel"] = "Add Youtube channel";
+$lang["Youtube"] = "Youtube";
+$lang["Add profile"] = "Add profile";
+$lang["Choose the profile you'd like to manage"] = "Choose the profile you'd like to manage";
+$lang["Search"] = "Search";
+$lang["Add profile"] = "Add profile";
+$lang["If you don't see your profiles above, you might try to reconnec, re-accept all permissions, and ensure that you're logged in to the correct profile."] = "If you don't see your profiles above, you might try to reconnec, re-accept all permissions, and ensure that you're logged in to the correct profile.";
+$lang["Re-connect with Youtube"] = "Re-connect with Youtube";
+$lang["Callback URL:"] = "Callback URL:";
+$lang["Google Client ID"] = "Google Client ID";
+$lang["Google Client Secret"] = "Google Client Secret";
+$lang["Google API Key"] = "Google API Key";
+$lang["Click this link to create Google app:"] = "Click this link to create Google app:";

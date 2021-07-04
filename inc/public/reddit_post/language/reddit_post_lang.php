@@ -1,0 +1,20 @@
+<?php
+$lang["Success"] = "Success";
+$lang["Success"] = "Success";
+$lang["Photo"] = "Photo";
+$lang["Link"] = "Link";
+$lang["Text"] = "Text";
+$lang["Last 30 days"] = "Last 30 days";
+$lang["Successed"] = "Successed";
+$lang["Failed"] = "Failed";
+$lang["Post type"] = "Post type";
+$lang["Total"] = "Total";
+$lang["Enter title"] = "Enter title";
+$lang["Posted by anonymous just now"] = "Posted by anonymous just now";
+$lang["Comment"] = "Comment";
+$lang["Share"] = "Share";
+$lang["Approve"] = "Approve";
+$lang["Remove"] = "Remove";
+$lang["Spam"] = "Spam";
+$lang["This social network not support post this post type"] = "This social network not support post this post type";
+$lang["Anonymous"] = "Anonymous";

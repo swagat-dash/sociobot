@@ -1,0 +1,19 @@
+.proxy-advance-manager .table-mod tbody tr td.avatar{
+	width: 40px;
+	padding: 0 0 0 20px;
+}
+
+.proxy-advance-manager .table-mod tbody tr td.avatar img{
+	border-radius: 100px;
+	width: 40px;
+	height: 40px;
+}
+
+.proxy-advance-manager .table-mod tbody tr td .btn.dropdown-toggle{
+	color: #959cb6;
+}
+
+.proxy-advance-manager .table-mod tbody tr td .btn.dropdown-toggle:after{
+	content: "";
+	display: none;
+}

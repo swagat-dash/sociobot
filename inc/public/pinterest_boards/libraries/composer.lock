@@ -1,0 +1,118 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "01f3e846537b75ab581b75af2c8fef05",
+    "packages": [
+        {
+            "name": "dirkgroenen/pinterest-api-php",
+            "version": "0.2.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dirkgroenen/Pinterest-API-PHP.git",
+                "reference": "a090fefff6df3d86a02fed8e26616ccfd32849e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dirkgroenen/Pinterest-API-PHP/zipball/a090fefff6df3d86a02fed8e26616ccfd32849e4",
+                "reference": "a090fefff6df3d86a02fed8e26616ccfd32849e4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*",
+                "vlucas/phpdotenv": "^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DirkGroenen\\Pinterest\\": "src/Pinterest"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dirk Groenen",
+                    "email": "dirk@bitlabs.nl",
+                    "homepage": "http://dirkgroenen.nl",
+                    "role": "Creator/Developer"
+                }
+            ],
+            "description": "PHP Wrapper for the official Pinterest API",
+            "keywords": [
+                "api",
+                "pinterest",
+                "wrapper"
+            ],
+            "time": "2019-06-14T08:30:22+00:00"
+        },
+        {
+            "name": "seregazhuk/pinterest-bot",
+            "version": "v5.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/seregazhuk/php-pinterest-bot.git",
+                "reference": "9621d078fb3b0b6651ac5987841a2a8ccc4f2a2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/seregazhuk/php-pinterest-bot/zipball/9621d078fb3b0b6651ac5987841a2a8ccc4f2a2d",
+                "reference": "9621d078fb3b0b6651ac5987841a2a8ccc4f2a2d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-fileinfo": "*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "^0.4",
+                "mockery/mockery": "1.0",
+                "phpunit/phpunit": "~6.5"
+            },
+            "type": "package",
+            "autoload": {
+                "files": [
+                    "src/Helpers/functions.php"
+                ],
+                "psr-4": {
+                    "seregazhuk\\PinterestBot\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Zhuk",
+                    "email": "seregazhuk88@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library for Pintrest",
+            "keywords": [
+                "lib",
+                "php",
+                "pinterest"
+            ],
+            "time": "2019-02-13T10:22:44+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

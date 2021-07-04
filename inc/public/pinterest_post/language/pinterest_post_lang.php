@@ -1,0 +1,21 @@
+<?php
+$lang["Pinterest Post"] = "Pinterest Post";
+$lang["Post"] = "Post";
+$lang["Success"] = "Success";
+$lang["Photo"] = "Photo";
+$lang["Pinterest API not support post video"] = "Pinterest API not support post video";
+$lang["Pinterest requires an image"] = "Pinterest requires an image";
+$lang["Pinterest API not support post video"] = "Pinterest API not support post video";
+$lang["Image does not exist"] = "Image does not exist";
+$lang["Unknown error"] = "Unknown error";
+$lang["Last 30 days"] = "Last 30 days";
+$lang["Successed"] = "Successed";
+$lang["Failed"] = "Failed";
+$lang["Post type"] = "Post type";
+$lang["Total"] = "Total";
+$lang["Advance option"] = "Advance option";
+$lang["Upload by"] = "Upload by";
+$lang["Anonymous"] = "Anonymous";
+$lang["Saved"] = "Saved";
+$lang["Board"] = "Board";
+$lang["This social network not support post this post type"] = "This social network not support post this post type";

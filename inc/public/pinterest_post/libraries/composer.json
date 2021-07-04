@@ -1,0 +1,6 @@
+{
+    "require": {
+        "dirkgroenen/pinterest-api-php": "^0.2.12",
+        "seregazhuk/pinterest-bot": "^5.9"
+    }
+}

@@ -1,0 +1,83 @@
+.prewiew-instagram-live{
+    max-width: 350px;
+    position: relative;
+    margin: auto;    
+}
+
+.prewiew-instagram-live-header{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+    padding: 10px;
+}
+
+.prewiew-instagram-live-header .user{
+    position: relative;
+}
+
+.prewiew-instagram-live-header .user .img{
+    border-radius: 100px;
+    background: #f5f5f5;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+}
+
+.prewiew-instagram-live-header .user .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+
+.prewiew-instagram-live-header .user span{
+    position: absolute;
+    left: 40px;
+    color: #fff;
+    top: 7px;
+    font-weight: bold;
+}
+
+.prewiew-instagram-live-header .status{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+
+.prewiew-instagram-live-header .status .live{
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: 600;
+    background: linear-gradient(-45deg, #eb6200, #FF3D77)
+}
+
+.prewiew-instagram-live-header .status .view{
+    color: #fff;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.prewiew-instagram-live .preview-media{
+    background: #000 url(../img/instagram-logo.png) no-repeat center center;
+    height: 557px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    max-width: 350px;
+    margin: auto;
+}
+
+.prewiew-instagram-live .preview-media video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
