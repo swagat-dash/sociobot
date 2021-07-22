@@ -1,9 +1,6 @@
 {
     "require": {
         "google/apiclient-services": "dev-master",
-        "google/apiclient": "^2.0",
-        "ext-exif":"*",
-        "ext-mbstring": "*",
-        "ext-gd": "*"
+        "google/apiclient": "^2.0"
     }
 }

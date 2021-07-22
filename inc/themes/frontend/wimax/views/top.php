@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Title-->
-    <title><?php _e( get_option('website_title', 'SocioBot - Social Media Management And Automation ') )?></title>
+    <title><?php _e( get_option('website_title', 'SwagatDash's Organic Growth Toolkit') )?></title>
     <meta name="description" content="<?php _e( get_option('website_desc', '#1 Marketing Platform for Social Network') )?>">
     <meta name="keywords" content="<?php _e( get_option('website_keywords', 'social network, marketing, brands, businesses, agencies, individuals') )?>">
     <!-- Favicon-->

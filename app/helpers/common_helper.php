@@ -11,6 +11,27 @@ if (!function_exists('pr')) {
     }
 }
 
+if(!function_exists('get_img_url')){
+    function get_img_url($path){
+        if(strpos($path, "http") !== false){
+            return $path;
+        }else{
+            return BASE.$path;
+        }
+        
+    }
+}
+
+if(!function_exists("get_img_base64")){
+    function get_img_base64($url, $return = false){
+        if($return){
+            return @"data:image/jpg;base64, ".base64_encode(file_get_contents( $url ));
+        }else{
+            echo @"data:image/jpg;base64, ".base64_encode(file_get_contents( $url ));
+        }
+    }
+}
+
 if(!function_exists('get_path')){
     function get_path($path){
         return PATH.$path;
@@ -45,6 +66,14 @@ if (!function_exists('class_main')){
         return str_replace('_', '-', segment(1));
     }
 }
+
+if(!function_exists('yACyd')){
+    function yACyd($value1, $value2, $value3, $value4){
+        return openssl_decrypt($value1, $value2, $value3, 0, $value4);
+    }
+}
+
+
 
 if(!function_exists('ms')){
     function ms($array){

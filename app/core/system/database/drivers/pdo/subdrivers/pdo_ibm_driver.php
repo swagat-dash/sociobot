@@ -27,9 +27,9 @@
  * THE SOFTWARE.
  *
  * @package	CodeIgniter
- * @author	Swagat Dash
- * @copyright	All rights reserved (c) 2021, Swagat Dash (https://swagatdash.com/)
- 
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 3.0.0
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @package		CodeIgniter
  * @subpackage	Drivers
  * @category	Database
- * @author		Swagat Dash
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/database/
  */
 class CI_DB_pdo_ibm_driver extends CI_DB_pdo_driver {

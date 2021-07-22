@@ -10,7 +10,7 @@
           <p><?php _e( get_option('website_desc', '#1 Marketing Platform for Social Network') )?></p>
           <!-- Copywrite Text-->
           <div class="copywrite-text mb-5">
-            <p class="mb-0"><?php _e("&copy; 2021. All rights reserved.")?></p>
+            <p class="mb-0"><?php _e("&copy; 2020-2021. All rights reserved.")?></p>
           </div>
           
         </div>

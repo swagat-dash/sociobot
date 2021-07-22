@@ -15,11 +15,42 @@ class module extends MY_Controller {
 		//
 
 		$this->endpoint = "https://swagatdash.com/";
+
+		$this->stream_opts = [
+		    "ssl" => [
+		        "verify_peer"=>false,
+		        "verify_peer_name"=>false,
+		    ]
+		]; 
 	}
 
 	public function index($page = "", $category = "")
 	{
-		$categories = @file_get_contents($this->endpoint."category");
+
+		if( post("error") ){
+			$purchase = $this->model->get("*", $this->tb_purchase_manager, "", "id", "ASC");
+			if(!empty($purchase)){
+				$domain = base_url();
+				$params = [
+					"domain" => urlencode( $domain ),
+					"purchase_code" => $purchase->purchase_code,
+					"is_main" => 1,
+					"module" => 1
+				];
+
+				$result = @file_get_contents( $this->endpoint."change?".http_build_query( $params ), false, stream_context_create($this->stream_opts) );
+				if($result){
+					$result_array = json_decode( $result , 1 );
+					if( !is_array( $result_array ) ){
+						$license_path = FCPATH."assets/license.key";
+						@file_put_contents($license_path, $result); 
+						redirect( base_url("dashboard") );
+					}
+				}
+			}
+		}
+
+		$categories = @file_get_contents($this->endpoint."category", false, stream_context_create($this->stream_opts));
 		$categories = json_decode($categories);
 
 		$page_type = is_ajax()?false:true;
@@ -36,7 +67,7 @@ class module extends MY_Controller {
 					}
 				}
 
-				$result = @file_get_contents($this->endpoint."product/".$category."?domain=".urlencode( base_url() )."&purchases=".serialize($purchase_array));
+				$result = @file_get_contents($this->endpoint."product?category=".$category."&domain=".urlencode( base_url() )."&purchases=".serialize($purchase_array), false, stream_context_create($this->stream_opts));
 				$data['result'] = $result;
 				break;
 		}
@@ -69,6 +100,7 @@ class module extends MY_Controller {
 		$domain = base_url();
 
 		$purchase = $this->model->get("*", $this->tb_purchase_manager, "purchase_code = '{$purchase_code}'");
+		$crypto_code = hex2bin("6166646230646437373137306362343463343535653962356663373337633461");
 
 		if(!empty($purchase)){
 			ms([
@@ -80,11 +112,11 @@ class module extends MY_Controller {
 		$params = [
 			"domain" => urlencode( $domain ),
 			"purchase_code" => $purchase_code,
-			"is_main" => 0
+			"is_main" => 0,
+			"module" => 1
 		];
 
-		$result = @file_get_contents( $this->endpoint."install?".http_build_query( $params ) );
-		
+		$result = @file_get_contents( $this->endpoint."install?".http_build_query( $params ), false, stream_context_create($this->stream_opts) );
 		if(!$result){
 			ms([
 				"status" => "error",
@@ -96,14 +128,21 @@ class module extends MY_Controller {
 		if( is_array( $result_array ) && isset( $result_array['status'] ) && $result_array['status'] == "error"){
 			ms($result);
 		}
-
-		$result = base64_decode( $result );
-		$result = explode("{|}", $result);
-
-		if( count( $result ) != 5 ){
+		
+		try {
+			$result = RblGG( $result, $crypto_code, true );
+		} catch (Exception $e) {
 			ms([
 				"status" => "error",
-				"message" => __("There was a problem during installation")
+				"message" => "There was a problem during installation"
+			]);
+		}
+
+		$result = json_decode($result);
+		if( count( (array)$result ) != 6 ){
+			ms([
+				"status" => "error",
+				"message" => "There was a problem during installation"
 			]);
 		}
 
@@ -114,28 +153,29 @@ class module extends MY_Controller {
 			]);
 	    }
 
-		$status = $result[0];
-		$item_id = $result[1];
-		$install_path = $result[2];
-		$version = $result[3];
-		$data = $result[4];
-		$file = TMP_PATH.ids().".temp";
+		$status = $result->status;
+		$item_id = $result->id;
+		$license = $result->license;
+		$install_path = $result->path;
+		$version = $result->version;
+		$data = $result->file;
+		$file = TMP_PATH.md5(rand()).".temp";
 
 	    $fp = @fopen($file, 'w');
 	    @fwrite( $fp, base64_decode( $data ) );
 	    @fclose($fp);
 
-		if(!is_file($file) || !is_readable(TMP_PATH)){
+	    if(!is_file($file) || !is_readable(TMP_PATH)){
 		    ms([
 				"status" => "error",
-				"message" => __("Can't read input")
+				"message" => "Can't read input"
 			]);
 		}
 
 		if(!is_dir(TMP_PATH) || !is_writable(TMP_PATH)){
 		    ms([
 				"status" => "error",
-				"message" => __("Can't write to target")
+				"message" => "Can't write to target"
 			]);
 		}
 
@@ -169,9 +209,9 @@ class module extends MY_Controller {
 		);
 
 		$this->db->insert($this->tb_purchase_manager , $save);
-
+		get_option("license_".$item_id, $license);
 		if( file_exists( $install_path."database.sql" ) ){
-			$sql = @file_get_contents($install_path."database.sql");
+			$sql = file_get_contents($install_path."database.sql", false, stream_context_create($this->stream_opts));
 			$sql_querys = explode(';', $sql);
 			array_pop($sql_querys);
 
@@ -193,6 +233,7 @@ class module extends MY_Controller {
 
 	public function do_update($item_id = "", $version = ""){
 		$purchase = $this->model->get("*", $this->tb_purchase_manager, "item_id = '".$item_id."'");
+		$crypto_code = hex2bin("6166646230646437373137306362343463343535653962356663373337633461");
 		if( !$purchase ){
 			ms([
 				"status" => "error",
@@ -206,8 +247,7 @@ class module extends MY_Controller {
 			"version" => $version
 		];
 
-		$result = @file_get_contents( $this->endpoint."update?".http_build_query( $params ) );
-
+		$result = @file_get_contents( $this->endpoint."update?".http_build_query( $params ), false, stream_context_create($this->stream_opts) );
 		if(!$result){
 			ms([
 				"status" => "error",
@@ -220,10 +260,17 @@ class module extends MY_Controller {
 			ms($result);
 		}
 
-		$result = base64_decode( $result );
-		$result = explode("{|}", $result);
+		try {
+			$result = RblGG( $result, $crypto_code, true );
+		} catch (Exception $e) {
+			ms([
+				"status" => "error",
+				"message" => "There was a problem during installation"
+			]);
+		}
 
-		if( count( $result ) != 5 ){
+		$result = json_decode($result);
+		if( count( (array)$result ) != 7 ){
 			ms([
 				"status" => "error",
 				"message" => __("There was a problem during installation")
@@ -237,13 +284,15 @@ class module extends MY_Controller {
 			]);
 	    }
 
-	    $status = $result[0];
-		$item_id = $result[1];
-		$install_path = $result[2];
-		$version = $result[3];
-		$data = $result[4];
-
-		$file = TMP_PATH.ids().".temp";
+	    $status = $result->status;
+		$item_id = $result->id;
+		$license = $result->license;
+		$is_main = $result->is_main;
+		$install_path = $result->path;
+		$version = $result->version;
+		$data = $result->file;
+		$file = TMP_PATH.md5(rand()).".temp";
+		$license_path = FCPATH."../assets/license.key";
 
 	    $fp = @fopen($file, 'w');
 	    @fwrite( $fp, base64_decode( $data ) );
@@ -290,8 +339,15 @@ class module extends MY_Controller {
 
 		$this->db->update($this->tb_purchase_manager , $save, [ "id" => $purchase->id ]);
 
+		if( $is_main == 1 ){
+			@file_put_contents($license_path, $license);
+			update_option( "license", get_option("license", $license) );
+		}else{
+			update_option( "license_".$item_id, get_option("license_".$item_id, $license) );
+		}
+
 		if( file_exists( $install_path."database.sql" ) ){
-			$sql = @file_get_contents($install_path."database.sql");
+			$sql = @file_get_contents($install_path."database.sql", false, stream_context_create($this->stream_opts));
 			$sql_querys = explode(';', $sql);
 			array_pop($sql_querys);
 

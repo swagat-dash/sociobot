@@ -66,6 +66,7 @@ class package_manager extends MY_Controller {
 		$position = (int)post('position');
 		$status = (int)post('status');
 		$permissions = post('permissions');
+		$permissions['number_accounts'] = $number_accounts;
 
 		validate('null', __('Name'), $name);
 		validate('null', __('Description'), $description);

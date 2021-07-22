@@ -3,7 +3,7 @@
         <h5 class="fs-16 fw-4 text-info m-b-20"><i class="fas fa-caret-right"></i> <?php _e('General')?></h5>
         <div class="form-group">
             <label for="website_title"><?php _e('Website title')?></label>
-            <input type="text" class="form-control" id="website_title" name="website_title" value="<?php _e( get_option('website_title', 'SocioBot - Social Media Management And Automation ') )?>">
+            <input type="text" class="form-control" id="website_title" name="website_title" value="<?php _e( get_option('website_title', 'SwagatDash's Organic Growth Toolkit') )?>">
         </div>
         <div class="form-group">
             <label for="website_desc"><?php _e('Website description')?></label>

@@ -1,7 +1,4 @@
 <?php
-/**
- * 
- */
 class pre_controller{
 
 	public function action(){
@@ -12,6 +9,7 @@ class pre_controller{
         
         $this->cookie();
         $this->check_login();
+        $this->clear_session();
         $CI = &get_instance();
 
         $module_name = $CI->load->module_name;
@@ -317,6 +315,32 @@ class pre_controller{
                     redirect( get_url("dashboard") );
                 }
             }
+
+            $value6 = false;
+            if( is_file(FCPATH."assets/license.key") ){
+                $value1 = file_get_contents(FCPATH."assets/license.key");
+                get_option("license", $value1);
+                $value2 = "AES-256-CBC";
+                $value3 = "5d3cd64d5d2f07292d75676b93921497";
+                $value4 = substr($value3, 0, 16);
+
+                $value5 = yACyd($value1, $value2, $value3, $value4);
+                $value5 = json_decode($value5);
+
+                if( isset($value5->domain) && $value5->domain == $_SERVER['HTTP_HOST']){
+                    $value6 = true;
+                }
+            }
+
+            if(!$value6  && stripos( current_url() , "/module") === false){
+                redirect( PATH."module/index/product/main_scripts?error=".urlencode("Invalid license or already installed on another domain.. Please contact the author for assistance") );
+            }
         }
+    }
+
+    public function clear_session(){
+        $CI = &get_instance();
+        $CI->load->model("main_model", "main_model");
+        $CI->main_model->delete("sp_sessions", ['timestamp' < time()-2592000 ]);
     }
 }

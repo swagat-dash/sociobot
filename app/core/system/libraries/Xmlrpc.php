@@ -27,9 +27,9 @@
  * THE SOFTWARE.
  *
  * @package	CodeIgniter
- * @author	Swagat Dash
- * @copyright	All rights reserved (c) 2021, Swagat Dash (https://swagatdash.com/)
- 
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -50,7 +50,7 @@ if ( ! function_exists('xml_parser_create'))
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	XML-RPC
- * @author		Swagat Dash
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/libraries/xmlrpc.html
  */
 class CI_Xmlrpc {
@@ -558,7 +558,7 @@ class CI_Xmlrpc {
  * XML-RPC Client class
  *
  * @category	XML-RPC
- * @author		Swagat Dash
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/libraries/xmlrpc.html
  */
 class XML_RPC_Client extends CI_Xmlrpc
@@ -779,7 +779,7 @@ class XML_RPC_Client extends CI_Xmlrpc
  * XML-RPC Response class
  *
  * @category	XML-RPC
- * @author		Swagat Dash
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/libraries/xmlrpc.html
  */
 class XML_RPC_Response
@@ -1029,7 +1029,7 @@ class XML_RPC_Response
  * XML-RPC Message class
  *
  * @category	XML-RPC
- * @author		Swagat Dash
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/libraries/xmlrpc.html
  */
 class XML_RPC_Message extends CI_Xmlrpc
@@ -1648,7 +1648,7 @@ class XML_RPC_Message extends CI_Xmlrpc
  * XML-RPC Values class
  *
  * @category	XML-RPC
- * @author		Swagat Dash
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/libraries/xmlrpc.html
  */
 class XML_RPC_Values extends CI_Xmlrpc
