@@ -19,6 +19,16 @@ namespace Google\Service\SASPortalTesting;
 
 class SasPortalDeviceMetadata extends \Google\Model
 {
+  public $antennaModel;
+
+  public function setAntennaModel($antennaModel)
+  {
+    $this->antennaModel = $antennaModel;
+  }
+  public function getAntennaModel()
+  {
+    return $this->antennaModel;
+  }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

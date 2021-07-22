@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '9bf2a2133e6f1bcfa85ee963de029734935a5b9a',
+    'reference' => 'd4d4a1247ad676d39dd59640df93bdd34ba41f71',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '9bf2a2133e6f1bcfa85ee963de029734935a5b9a',
+      'reference' => 'd4d4a1247ad676d39dd59640df93bdd34ba41f71',
     ),
     'firebase/php-jwt' => 
     array (
@@ -69,7 +69,7 @@ private static $installed = array (
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '0375af405757b36f3bcc82e19d7daf61e0b4cfd8',
+      'reference' => 'f17815efe11cda6649b3ba3423dfa354a4f235e0',
     ),
     'google/auth' => 
     array (

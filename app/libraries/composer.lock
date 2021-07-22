@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfa712d6027a049a1dfe00e9059c2eb7",
+    "content-hash": "e535eb1b41d9fa1e640b6a43037a8fab",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -122,12 +122,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "0375af405757b36f3bcc82e19d7daf61e0b4cfd8"
+                "reference": "f17815efe11cda6649b3ba3423dfa354a4f235e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/0375af405757b36f3bcc82e19d7daf61e0b4cfd8",
-                "reference": "0375af405757b36f3bcc82e19d7daf61e0b4cfd8",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/f17815efe11cda6649b3ba3423dfa354a4f235e0",
+                "reference": "f17815efe11cda6649b3ba3423dfa354a4f235e0",
                 "shasum": ""
             },
             "require": {
@@ -157,9 +157,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.201.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/master"
             },
-            "time": "2021-06-18T15:00:35+00:00"
+            "time": "2021-07-21T11:20:24+00:00"
         },
         {
             "name": "google/auth",
@@ -1061,7 +1061,11 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-gd": "*",
+        "ext-mbstring": "*",
+        "ext-exif": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
 }

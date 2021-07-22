@@ -20,6 +20,7 @@ namespace Google\Service\Storagetransfer;
 class GoogleServiceAccount extends \Google\Model
 {
   public $accountEmail;
+  public $subjectId;
 
   public function setAccountEmail($accountEmail)
   {
@@ -28,6 +29,14 @@ class GoogleServiceAccount extends \Google\Model
   public function getAccountEmail()
   {
     return $this->accountEmail;
+  }
+  public function setSubjectId($subjectId)
+  {
+    $this->subjectId = $subjectId;
+  }
+  public function getSubjectId()
+  {
+    return $this->subjectId;
   }
 }
 

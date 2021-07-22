@@ -146,8 +146,7 @@ class V1 extends \Google\Service\Resource
    * This method implements the google.longrunning.Operation, which allows you to
    * track the operation status. We recommend intervals of at least 2 seconds with
    * exponential backoff retry to poll the operation result. The metadata contains
-   * the request to help callers to map responses to requests.
-   * (v1.analyzeIamPolicyLongrunning)
+   * the metadata for the long-running operation. (v1.analyzeIamPolicyLongrunning)
    *
    * @param string $scope Required. The relative name of the root asset. Only
    * resources and IAM policies within the scope will be analyzed. This can only
@@ -401,19 +400,30 @@ class V1 extends \Google\Service\Resource
    * Cloud resources that have a label "env". * `kmsKey:key` to find Cloud
    * resources encrypted with a customer-managed encryption key whose name
    * contains the word "key". * `state:ACTIVE` to find Cloud resources whose state
-   * contains "ACTIVE" as a word. * `NOT state:ACTIVE` to find {{gcp_name}}
-   * resources whose state doesn't contain "ACTIVE" as a word. *
-   * `createTime<1609459200` to find Cloud resources that were created before
+   * contains "ACTIVE" as a word. * `NOT state:ACTIVE` to find Cloud resources
+   * whose state doesn't contain "ACTIVE" as a word. * `createTime<1609459200` to
+   * find Cloud resources that were created before "2021-01-01 00:00:00 UTC".
+   * 1609459200 is the epoch timestamp of "2021-01-01 00:00:00 UTC" in seconds. *
+   * `updateTime>1609459200` to find Cloud resources that were updated after
    * "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01
-   * 00:00:00 UTC" in seconds. * `updateTime>1609459200` to find Cloud resources
-   * that were updated after "2021-01-01 00:00:00 UTC". 1609459200 is the epoch
-   * timestamp of "2021-01-01 00:00:00 UTC" in seconds. * `Important` to find
-   * Cloud resources that contain "Important" as a word in any of the searchable
-   * fields. * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-   * of any word in any of the searchable fields. * `Important location:(us-west1
-   * OR global)` to find Cloud resources that contain "Important" as a word in any
-   * of the searchable fields and are also located in the "us-west1" region or the
-   * "global" location.
+   * 00:00:00 UTC" in seconds. * `Important` to find Cloud resources that contain
+   * "Important" as a word in any of the searchable fields. * `Impor*` to find
+   * Cloud resources that contain "Impor" as a prefix of any word in any of the
+   * searchable fields. * `Important location:(us-west1 OR global)` to find Cloud
+   * resources that contain "Important" as a word in any of the searchable fields
+   * and are also located in the "us-west1" region or the "global" location.
+   * @opt_param string readMask Optional. A comma-separated list of fields
+   * specifying which fields to be returned in ResourceSearchResult. Only '*' or
+   * combination of top level fields can be specified. Field names of both
+   * snake_case and camelCase are supported. Examples: `"*"`, `"name,location"`,
+   * `"name,versionedResources"`. The read_mask paths must be valid field paths
+   * listed but not limited to (both snake_case and camelCase are supported): *
+   * name * assetType * project * displayName * description * location * labels *
+   * networkTags * kmsKey * createTime * updateTime * state * additionalAttributes
+   * * versionedResources If read_mask is not specified, all fields except
+   * versionedResources will be returned. If only '*' is specified, all fields
+   * including versionedResources will be returned. Any invalid field path will
+   * trigger INVALID_ARGUMENT error.
    * @return SearchAllResourcesResponse
    */
   public function searchAllResources($scope, $optParams = [])

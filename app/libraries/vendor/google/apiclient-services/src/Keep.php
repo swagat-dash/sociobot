@@ -23,11 +23,12 @@ use Google\Client;
  * Service definition for Keep (v1).
  *
  * <p>
- * Allows clients to create, read, and write their Google Keep Notes.</p>
+ * This API is an enterprise-only API used to create and manage the Keep notes
+ * within your domain, including resolving issues identified by CASB software.</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://support.google.com/keep" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/keep/api" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -37,6 +38,9 @@ class Keep extends \Google\Service
   /** See, edit, create and permanently delete all your Google Keep data. */
   const KEEP =
       "https://www.googleapis.com/auth/keep";
+  /** View all your Google Keep data. */
+  const KEEP_READONLY =
+      "https://www.googleapis.com/auth/keep.readonly";
 
   public $media;
   public $notes;

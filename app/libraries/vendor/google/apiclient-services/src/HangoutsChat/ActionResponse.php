@@ -19,9 +19,25 @@ namespace Google\Service\HangoutsChat;
 
 class ActionResponse extends \Google\Model
 {
+  protected $dialogActionType = DialogAction::class;
+  protected $dialogActionDataType = '';
   public $type;
   public $url;
 
+  /**
+   * @param DialogAction
+   */
+  public function setDialogAction(DialogAction $dialogAction)
+  {
+    $this->dialogAction = $dialogAction;
+  }
+  /**
+   * @return DialogAction
+   */
+  public function getDialogAction()
+  {
+    return $this->dialogAction;
+  }
   public function setType($type)
   {
     $this->type = $type;

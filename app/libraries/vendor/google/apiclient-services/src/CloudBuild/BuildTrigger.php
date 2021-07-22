@@ -20,6 +20,7 @@ namespace Google\Service\CloudBuild;
 class BuildTrigger extends \Google\Collection
 {
   protected $collection_key = 'tags';
+  public $autodetect;
   protected $buildType = Build::class;
   protected $buildDataType = '';
   public $createTime;
@@ -36,6 +37,8 @@ class BuildTrigger extends \Google\Collection
   protected $pubsubConfigType = PubsubConfig::class;
   protected $pubsubConfigDataType = '';
   public $resourceName;
+  protected $sourceToBuildType = GitRepoSource::class;
+  protected $sourceToBuildDataType = '';
   public $substitutions;
   public $tags;
   protected $triggerTemplateType = RepoSource::class;
@@ -43,6 +46,14 @@ class BuildTrigger extends \Google\Collection
   protected $webhookConfigType = WebhookConfig::class;
   protected $webhookConfigDataType = '';
 
+  public function setAutodetect($autodetect)
+  {
+    $this->autodetect = $autodetect;
+  }
+  public function getAutodetect()
+  {
+    return $this->autodetect;
+  }
   /**
    * @param Build
    */
@@ -164,6 +175,20 @@ class BuildTrigger extends \Google\Collection
   public function getResourceName()
   {
     return $this->resourceName;
+  }
+  /**
+   * @param GitRepoSource
+   */
+  public function setSourceToBuild(GitRepoSource $sourceToBuild)
+  {
+    $this->sourceToBuild = $sourceToBuild;
+  }
+  /**
+   * @return GitRepoSource
+   */
+  public function getSourceToBuild()
+  {
+    return $this->sourceToBuild;
   }
   public function setSubstitutions($substitutions)
   {
