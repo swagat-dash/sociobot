@@ -1,3 +1,15 @@
+<?php 
+$report_list = get_ci_value("reports_list");
+if( count($report_list) == 1){
+	foreach ($report_list as $row){
+		$id = strtolower( str_replace(" ", "_", $row['name']) );
+		if(!segment(3) == $id){
+			redirect( get_module_url("index/".$id) );
+		}
+	}
+}
+?>
+
 <div class="input-group box-search-one">
   	<input class="form-control search-input" type="text" autocomplete="off" placeholder="<?php _e('Search')?>">
   	<span class="input-group-append">
@@ -10,6 +22,7 @@
 <div class="widget">
 	
 	<div class="widget-list search-list">
+		<?php if( count($report_list) != 1){?>
 		<div class="widget-item widget-item-3 search-list <?php _e( segment(3) == ""?"active":"" ) ?>" data-pid="">
 			 <a href="<?php _e( get_module_url("index") )?>" class="actionItem" data-result="html" data-content="column-two" data-history="<?php _e( get_module_url("index") )?>" data-call-after="Layout.tooltip();">
                 <div class="icon border"><i class="fas fa-chart-bar" style="color: #fa7070"></i></div>
@@ -26,9 +39,10 @@
 				</label>
 			</div>
 		</div>
+		<?php }?>
 
 		<?php 
-		$report_list = get_ci_value("reports_list");
+		
 
 		if(!empty($report_list)){?>
 

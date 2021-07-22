@@ -15,7 +15,7 @@
 	  	</div>
 	  	<div class="form-group">
 	        <label for="email_name"><?php _e('Your name')?></label>
-	        <input type="text" class="form-control" id="email_name" name="email_name" value="<?php _e( get_option('email_name', 'SocioBot') )?>">
+	        <input type="text" class="form-control" id="email_name" name="email_name" value="<?php _e( get_option('email_name', 'Sociobots') )?>">
 	  	</div>
 	  	<div class="form-group">
 			<label for="status"><?php _e('Email Protocol')?></label>

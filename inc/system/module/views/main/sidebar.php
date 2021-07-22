@@ -53,13 +53,14 @@
 	            <div class="modal-body">
 	                
 	            	<div class="form-group">
-			            <label for="purchase_code"><?php _e('Enter passcode from SwagatDash.com')?></label>
+			            <label for="purchase_code"><?php _e('Enter purchase code')?></label>
 			            <input type="text" class="form-control" id="purchase_code" name="purchase_code" value="">
 			        </div>
 			        <ul class="list-group">
 					  	<li class="list-group-item active text-uppercase"><?php _e("Note")?></li>
-					  	<li class="list-group-item"><i class="fas fa-caret-right text-info"></i> <?php _e("For use by Swagat Dash only")?></li>
-					  	<li class="list-group-item"><i class="fas fa-caret-right text-info"></i> <?php _e("Do not mess")?></li>
+					  	<li class="list-group-item"><i class="fas fa-caret-right text-info"></i> <?php _e("Just can install modules or themes")?></li>
+					  	<li class="list-group-item"><i class="fas fa-caret-right text-info"></i> <?php _e("Cannot use for reinstall main script")?></li>
+					  	<li class="list-group-item"><i class="fas fa-caret-right text-info"></i> <?php _e("Make sure your server does not block the permissions to install")?></li>
 					</ul>
 	            </div>
 	            <div class="modal-footer">

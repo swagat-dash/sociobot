@@ -76,6 +76,7 @@ if( segment(1) == "" || segment(1) == "pricing" ){
     
     $menu_posts = [];
     $menu_addons = [];
+    $pricing_menu = [];
 
     $main_groups = get_groups();
 
@@ -105,6 +106,10 @@ if( segment(1) == "" || segment(1) == "pricing" ){
                 }
             }
 
+            if( isset($group['pricing_menu']) ){
+                $pricing_menu[] = $group['pricing_menu'];
+            }
+
         }
     }
 
@@ -118,6 +123,7 @@ if( segment(1) == "" || segment(1) == "pricing" ){
 
     $CI->post_package = $menu_posts;
     $CI->addon_package = $menu_addons;
+    $CI->pricing_menu = $pricing_menu;
     $CI->packages = $packages; 
 }
 
@@ -192,6 +198,7 @@ function get_groups(){
                 $config['menu']['color'] = @$config['color'];
                 $config['menu']['pricing'] = @$config['pricing'];
                 $config['menu']['sub_name'] = @$config['name'];
+                $config['menu']['pricing_menu'] = @$config['pricing_menu'];
                 $menus[] = $config['menu'];
             }
         }
@@ -225,6 +232,9 @@ function get_groups(){
                 $group[$name]['color'] = $menu['color'];
                 $group[$name]['pricing'] = $menu['pricing'];
                 $group[$name]['sub_name'] = $menu['name'];
+                if( isset($menu['pricing_menu']) ){
+                    $group[$name]['pricing_menu'] = $menu['pricing_menu'];
+                }
 
                 if( isset( $menu['sub_menu'] ) ){
                     $menu['sub_menu']["sub_name"] = $menu['sub_name'];

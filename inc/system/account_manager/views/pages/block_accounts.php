@@ -15,7 +15,7 @@
 						</label>
 	        		</div>
 	        		<div class="col-6">
-	        			<a class="btn btn-label-danger btn-sm float-right position-relative m-b-10 actionMultiItem" href="<?php _e( get_module_url('delete') )?>" data-confirm="<?php _e('Are you sure to delete this items?')?>" data-redirect="<?php _e( get_module_url("account_manager") )?>"><i class="far fa-trash-alt"></i></a>
+	        			<a class="btn btn-label-danger btn-sm float-right position-relative m-b-10 actionMultiItem" href="<?php _e( get_module_url('delete') )?>" data-confirm="<?php _e('Are you sure to delete this items?')?>" data-redirect="<?php _e( get_module_url() )?>"><i class="far fa-trash-alt"></i></a>
 	        		</div>
 	    		</div>
 				<?php foreach ($result as $row): ?>

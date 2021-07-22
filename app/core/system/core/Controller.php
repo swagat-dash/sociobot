@@ -27,8 +27,8 @@
  * THE SOFTWARE.
  *
  * @package	CodeIgniter
- * @author	Swagat Dash
- * @copyright	All rights reserved (c) 2021, Swagat Dash (https://swagatdash.com/)
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
  * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
  * @license	https://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Libraries
- * @author		Swagat Dash
+ * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/general/controllers.html
  */
 class CI_Controller {

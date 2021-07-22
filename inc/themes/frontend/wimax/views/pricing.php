@@ -29,6 +29,7 @@
     $posts = get_ci_value("post_package");
     $addons = get_ci_value("addon_package");
     $packages = get_ci_value("packages");
+    $pricing_menu = get_ci_value("pricing_menu");
     ?>
 
     <?php if(!empty($packages)){?>
@@ -99,13 +100,54 @@
               </div>
           </div>
           <div class="description">
-            <p><h6><?php _e("Scheduling & Report")?></h6></p>
-            <?php foreach ($posts as $value): ?>
-                <p>
-                  <i class="<?php _e( isset($row->permissions[ $value['id']."_enable" ]) ? "lni-check-mark-circle":"lni-close" )?>"></i>
-                  <span><?php _e( sprintf( sprintf(__("%s scheduling & report"),  __( $value['group'] ) ) ) )?></span>
-                </p>
-            <?php endforeach ?>
+            <?php if(!empty($posts)){?>
+              <p><h6><?php _e("Scheduling & Report")?></h6></p>
+              <?php foreach ($posts as $value): ?>
+                  <p>
+                    <i class="<?php _e( isset($row->permissions[ $value['id']."_enable" ]) ? "lni-check-mark-circle":"lni-close" )?>"></i>
+                    <span><?php _e( sprintf( sprintf(__("%s scheduling & report"),  __( $value['group'] ) ) ) )?></span>
+                  </p>
+              <?php endforeach ?>
+            <?php }?>
+
+            <?php if(!empty($pricing_menu)){?>
+              <?php foreach ($pricing_menu as $pm): ?>
+
+                <?php if( isset($row->permissions[ $pm['main_permission'] ]) && $row->permissions[ $pm['main_permission'] ]){?>
+                  <p><h6><?php _e($pm['title'])?></h6></p>
+                  <?php if( isset($pm['sub_menu']) ){?>
+
+                    <?php foreach ($pm['sub_menu'] as $pm_sub): ?>
+                        
+                        <?php if(is_array($pm_sub)){ 
+                          $pm_permission = isset($row->permissions[ $pm_sub['permission'] ])?$row->permissions[ $pm_sub['permission'] ]:0;
+                        ?>
+                          <p>
+                            <?php if( $pm_permission || (isset($pm_sub['check']) && $pm_sub['check']) ){?>
+                              <i class="lni-check-mark-circle"></i>
+                            <?php }else{?>
+                              <i class="lni-close"></i>
+                            <?php }?>
+
+                            <?php if(is_string( $pm_sub['text'] )){?>
+                            <span><?php _e( sprintf($pm_sub['text'], $pm_permission ) )?></span>
+                            <?php }else{?>
+                            <span><?php _e( $pm_permission?sprintf($pm_sub['text'][1], $pm_permission ):$pm_sub['text'][0], false)?></span>
+                            <?php }?>
+
+                          </p>
+                        <?php }?>
+
+                    <?php endforeach ?>
+                    
+                  <?php }?>
+
+                <?php }?>
+              
+              <?php endforeach ?>
+
+            <?php }?>
+
             <?php if(!empty($addons)){?>
               <p><h6><?php _e("Modules & Addons")?></h6></p>
 

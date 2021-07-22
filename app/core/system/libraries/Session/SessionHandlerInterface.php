@@ -27,8 +27,8 @@
  * THE SOFTWARE.
  *
  * @package	CodeIgniter
- * @author	Swagat Dash
- * @copyright	All rights reserved (c) 2021, Swagat Dash (https://swagatdash.com/)
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
  * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com

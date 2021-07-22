@@ -35,7 +35,7 @@ if(!empty($group)){
 		                ?>
 		                <li class="group-item">
 		                    <div class="pic">
-		                        <img src="<?php _e( get_path( get_data($row, 'avatar') ) )?>">
+		                        <img src="<?php _e( get_img_url( get_data($row, 'avatar') ) )?>">
 		                    </div>
 		                    <div class="detail">
 		                        <div class="title"><?php _e( get_data($row, "name") )?></div>
@@ -59,7 +59,7 @@ if(!empty($group)){
 		                ?>
 		                <li class="group-item">
 		                    <div class="pic">
-		                        <img src="<?php _e( get_path( get_data($row, 'avatar') ) )?>">
+		                        <img src="<?php _e( get_img_url( get_data($row, 'avatar') ) )?>">
 		                    </div>
 		                    <div class="detail">
 		                        <div class="title"><?php _e( get_data($row, "name") )?></div>

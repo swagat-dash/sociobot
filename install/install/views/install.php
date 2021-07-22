@@ -103,7 +103,7 @@ if($php_version_success && $curl_success && $mysqli_success && $openssl_success 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Install - SocioBot - Social Media Management Tools</title>
+	<title>Install - SwagatDash's Organic Growth Toolkits</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="./assets/plugins/bootstrap/css/bootstrap.min.css">
@@ -136,9 +136,9 @@ if($php_version_success && $curl_success && $mysqli_success && $openssl_success 
 
 		    <div>
 		        <div id="step-1" class="step-1">
-		            <h3>Welcome to SocioBot Installation</h3>
+		            <h3>Welcome to Sociobots Installation</h3>
 
-					SocioBot is a social media marketing tool that allows and helps you to easily auto post, schedule Instagram posts along with Facebook, Twitter and many more. It also can manage multiple social networks, schedule posts and engage your audiences.
+					Sociobots is a social media marketing tool that allows and helps you to easily auto post, schedule Instagram posts along with Facebook, Twitter and many more. It also can manage multiple social networks, schedule posts and engage your audiences.
 		        </div>
 		        <div id="step-2" class="step-2">
 	            	<h4>End-User License Agreement</h4>
@@ -148,7 +148,7 @@ if($php_version_success && $curl_success && $mysqli_success && $openssl_success 
 				    If you agree to all of the terms of this End-User License Agreement, by checking the box or clicking the button to confirm your acceptance when you first install the web application, you are agreeing to all the terms of this agreement. Also, By downloading, installing, using, or copying this web application, you accept and agree to be bound by the terms of this End-User License Agreement, you are agreeing to all the terms of this agreement. If you do not agree to all of these terms, do not check the box or click the button and/or do not use, copy or install the web application, and uninstall the web application from all your server that you own or control. 
 				    <br>
 				    <br>
-				    <strong>Note:</strong> With SocioBot, We are using the official Social Media API (Facebook, Twitter etc, except Instagram) which is available on Developer Center. That is a reason why it depends on Social Media API(Facebook, Instagram, Twitter etc). Therefore, We are not responsible if they made too many critical changes in their side. We  also don't guarantee that the compatibility of the script with Socia Media API will be forever. Although we always try to update the lastest version of script as soon as possible. <strong>We don't provide any refund for all problems which are originated from Social Media API (Facebook, Instagram, Twitter etc).</strong>
+				    <strong>Note:</strong> With Sociobots, We are using the official Social Media API (Facebook, Twitter etc, except Instagram) which is available on Developer Center. That is a reason why Sociobot depends on Social Media API(Facebook, Instagram, Twitter etc). Therefore, We are not responsible if they made too many critical changes in their side. We  also don't guarantee that the compatibility of the script with Socia Media API will be forever. Although we always try to update the lastest version of script as soon as possible. <strong>We don't provide any refund for all problems which are originated from Social Media API (Facebook, Instagram, Twitter etc).</strong>
 
 				    <br>
 				    <br>
@@ -307,7 +307,7 @@ if($php_version_success && $curl_success && $mysqli_success && $openssl_success 
 
 	            	<div class="title mt0"><span class="num">1.</span> License</div>
 					<div class="form-group row">
-						<label for=""  class="col-4 col-form-label">Passcode from SwagatDash </label>
+						<label for=""  class="col-4 col-form-label">Purchase code </label>
 						<div class="col-8">
 							<input type="text" class="form-control" id="purchase_code" name="purchase_code" placeholder="Enter your purchase code">
 						</div>
